@@ -18,8 +18,7 @@ from styles import style
 class AutoEmail():
     """
     Sends automatic emails.
-    You must setup 2 variables, "sender_email" and "password", in an ".env" file in the main directory.
-    receiver_email: email to send to
+    You must setup 3 variables, "sender_email", "password" and "receiver_email", in an ".env" file in the main directory.
     title: title/subject of email
     body_text: body/text of email. Can be in html format or just plain old text. will be incorporated in a div in top of body.
     table: Do not assign any value if don't need. if you want to render a pandas DataFrame inside them email body as an html table (after text) and also attach it as an excel or csv file.
@@ -52,21 +51,25 @@ class AutoEmail():
                     )
     """
 
-    def __init__(self, receiver_email, title, body_text, table={}):    
+    def __init__(self, title, body_text, table={}):    
         self.images_path, self.attachments_path = setup()
         logging.info('Setting up variables')
-        self.receiver_email = receiver_email
         self.title = title
         self.body_text = body_text
         self.table = table
         
 
+
         load_dotenv()
-        self.sender_email = os.environ.get("email")
+        self.sender_email = os.environ.get("sender_email")
         self.password = os.environ.get("password")
-        if not self.sender_email or not self.password:
-            logging.error(' "sender_email" and "password" variables not found in environment. You must setup this variables in an ".env" file in the main directory.')
+        self.receiver_email = os.environ.get("receiver_email")
+        if not self.sender_email or not self.password or not self.receiver_email:
+            logging.error(' "sender_email" or "password" or "receiver_email" variables not found in environment. You must setup this variables in an ".env" file in the main directory.')
         
+        logging.info(f'Sender Email: {self.sender_email}')
+        logging.info(f'Receiver Email: {self.receiver_email}')
+
         self.send_email()
 
     def df_to_txt(self):
@@ -209,10 +212,11 @@ class AutoEmail():
                 server.sendmail(
                     self.sender_email, self.receiver_email, message.as_string()
                 )
-        except Exception as e:
-            print(f"Not possible to send email: {e}")
+            logging.info('Email sent!')
 
-        logging.info('Email sent!')
+        except Exception as e:
+            logging.error(f"Not possible to send email: {e}")
+
 
         if self.df_fp:
             os.remove(self.df_fp)

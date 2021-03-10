@@ -13,7 +13,7 @@ Sends an email, from a specific **sender email** to a certain **receiver email**
 ```
 
 - Make sure your sender email address allows for remote usage (if it is gmail, you need to [allow less secure apps](https://myaccount.google.com/lesssecureapps)). 
-- You must setup 2 variables, `sender_email` and `password` (of that `sender_email`), in an `.env` file in the main directory. check the `.env.preset` file for the correct format.
+- You must setup 3 variables, `sender_email`, `password` (of that `sender_email`) and `receiver_email`, in an `.env` file in the main directory. check the `.env.preset` file for the correct format.
 
 ## Run
  
@@ -32,7 +32,6 @@ Edit the `style` variable in the `styles.py` file with your custom css code.
 ### Run
 Edit the file `run.py` with your custom variables:
 
-- `receiver_email`: email to send to
 - `title`: title/subject of email
 - `body_text`: body/text of email. Can be in html format or just plain old text. will be incorporated in a div in top of body.
 - `table`: if you want to render a pandas DataFrame inside them email body as an html table (after text) and also attach it as an excel or csv file. **Do not assign** any value if don't need. Example:
