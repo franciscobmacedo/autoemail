@@ -1,4 +1,4 @@
-# Auto Email
+# :e-mail: Auto Email
 
 Sends an email, from a specific **sender email** to a certain **receiver email**.
 
@@ -13,7 +13,7 @@ Sends an email, from a specific **sender email** to a certain **receiver email**
 ```
 
 - Make sure your sender email address allows for remote usage. 
-- You must setup 2 variables, `sender_email` and `password`, in an `.env` file in the main directory. check the `.env.preset` file for the correct format
+- You must setup 2 variables, `sender_email` and `password` (of that `sender_email`), in an `.env` file in the main directory. check the `.env.preset` file for the correct format.
 
 ## Run
  
