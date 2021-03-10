@@ -1,0 +1,5 @@
+INFO:root:Setting up variables
+ERROR:root: "email" and "password" variables not found in environment. You must setup this variables in an ".env" file in the main directory.
+INFO:root:Setting up variables
+ERROR:root: "email" and "password" variables not found in environment. You must setup this variables in an ".env" file in the main directory.
+INFO:root:Setting up variables
