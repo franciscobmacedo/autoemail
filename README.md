@@ -13,7 +13,7 @@ Sends an email, from a specific **sender email** to a certain **receiver email**
 ```
 
 - Make sure your sender email address allows for remote usage. 
-- You must setup 2 variables, "sender_email" and "password", in an ".env" file in the main directory. check the `.env.preset` file for the correct format
+- You must setup 2 variables, `sender_email` and `password`, in an `.env` file in the main directory. check the `.env.preset` file for the correct format
 
 ## Run
  
@@ -30,7 +30,7 @@ Edit the file `run.py` with your custom variables:
 - `body_text`: body/text of email. Can be in html format or just plain old text. will be incorporated in a div in top of body.
 - `table`: if you want to render a pandas DataFrame inside them email body as an html table (after text) and also attach it as an excel or csv file. **Do not assign** any value if don't need. Example:
     ```python
-        {
+        table = {
             'df': pd.DataFrame({
                     'dates': [1,2,3],
                     'values': [1203,4034,3434],
@@ -44,16 +44,9 @@ Edit the file `run.py` with your custom variables:
     - `name` is the file name, with or without extension - .csv, .xlsx (defult will be .xlsx)
     - `max_len` is the maximum length of the table to be displayed in the body text. The full table will always be available as an attachment 
     - `conditions`: dictionary with:
-        - **KEYS** - text that can be found in a cell of df that you want to format with a specific class and 
+        - **KEYS** - text that can be found in a cell of `df` that you want to format with a specific class and 
         - **VALUES** - what class to format that text with ('danger', 'danger-back', 'success', ...) from the `style` variable in the `styles.py` file.
 
-### Example:
-    send_auto_email(
-                receiver_email='yourclientemail@gmail.com', 
-                title='download 15/06',
-                text='Today our sales increase here and decrease there mostly because of reasons.', 
-                df=<AS_SHOWN_ABOVE>,  
-                )
 
 ## Images and Atachements
 
@@ -61,3 +54,12 @@ Edit the file `run.py` with your custom variables:
 - Images to show inline of the email should be placed inside the `images` folder. They will **not** show up as attachements _unless_ they are placed inside the `attachments` folder. 
 
 
+## Example
+```python
+send_auto_email(
+            receiver_email='yourclientemail@gmail.com', 
+            title='download 15/06',
+            text='Today our sales increase here and decrease there mostly because of reasons.', 
+            df=<AS_SHOWN_ABOVE>,  
+            )
+```
