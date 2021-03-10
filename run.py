@@ -9,7 +9,7 @@ df = pd.DataFrame({
     })
 
 table = {'df': df, 'name': 'some_sales_data', 'max_len': ''}
-table = {}
+# table = {}
 
 body_text = "Today our sales increase here and decrease there mostly because of reasons. You can see it in the following image and in the atached pdf report"
 
