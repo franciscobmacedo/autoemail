@@ -20,6 +20,7 @@ Sends an email, from a specific **sender email** to a certain **receiver email**
 ```python
     python run.py
 ```
+logs will be written in files inside the `logs` directory. Each file will have the date and time of the run.
 
 ## Arguments
 
