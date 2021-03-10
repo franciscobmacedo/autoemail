@@ -23,6 +23,12 @@ Sends an email, from a specific **sender email** to a certain **receiver email**
 
 ## Arguments
 
+
+### Styles
+Edit the `style` variable in the `styles.py` file with your custom css code.
+
+
+### Run
 Edit the file `run.py` with your custom variables:
 
 - `receiver_email`: email to send to

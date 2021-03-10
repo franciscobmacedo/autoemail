@@ -52,7 +52,7 @@ class AutoEmail():
                     )
     """
 
-    def __init__(self, receiver_email, title, body_text, table={}, ):    
+    def __init__(self, receiver_email, title, body_text, table={}):    
         self.images_path, self.attachments_path = setup()
         logging.info('Setting up variables')
         self.receiver_email = receiver_email
