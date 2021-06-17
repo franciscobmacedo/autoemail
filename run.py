@@ -15,3 +15,6 @@ table = {"df": df, "name": "some_sales_data", "max_len": ""}
 body_text = "Today our sales increase here and decrease there mostly because of reasons. You can see it in the following image and in the atached pdf report"
 
 AutoEmail(title="Sales Report", body_text=body_text, table=table)
+
+
+print("this is test 1")
