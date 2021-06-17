@@ -17,3 +17,5 @@ body_text = "Today our sales increase here and decrease there mostly because of 
 AutoEmail(title="Sales Report", body_text=body_text, table=table)
 
 print("test")
+
+print("test 2")
