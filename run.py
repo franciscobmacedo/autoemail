@@ -18,3 +18,4 @@ AutoEmail(title="Sales Report", body_text=body_text, table=table)
 
 
 print("this is test 1")
+print("this is test 2")
