@@ -17,6 +17,6 @@ body_text = "Today our sales increase here and decrease there mostly because of 
 AutoEmail(title="Sales Report", body_text=body_text, table=table)
 
 
-print("aaa")
-print("bbb")
-print("ccc")
+print("first")
+print("second")
+print("third")
